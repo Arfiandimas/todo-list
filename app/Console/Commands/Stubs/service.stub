@@ -1,0 +1,31 @@
+<?php
+
+namespace {{ namespace }};
+
+use App\Base\ServiceBase;
+use App\Responses\ServiceResponse;
+
+class {{ class }} extends ServiceBase
+{
+    protected $results;
+
+    public function __construct()
+    {
+        $this->results = null;
+    }
+
+    /**
+     * main method of this service
+     *
+     * @return ServiceResponse
+     */
+    public function call(): ServiceResponse
+    {
+        try{
+
+            return self::success($this->results);
+        }catch (\Throwable $th) {
+            return self::catchError($th, $th->getMessage());
+        }
+    }
+}
