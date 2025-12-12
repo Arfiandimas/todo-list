@@ -23,7 +23,7 @@ class ExportTodo implements FromArray, WithHeadings
         // Build query
         $query = Todo::query()
             ->when($request->filled('title'), function($q) use ($request) {
-                $q->where('title', 'ILIKE', '%'.$request->title.'%');
+                $q->where('title', 'LIKE', '%'.$request->title.'%');
             })
             ->when($request->filled('assignee'), function($q) use ($request) {
                 $q->whereIn('assignee', explode(',', $request->assignee));
