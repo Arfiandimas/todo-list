@@ -6,4 +6,5 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'todo'], function () {
     Route::post('', [TodoController::class, 'create']);
     Route::get('export', [TodoController::class, 'export']);
+    Route::get('chart', [TodoController::class, 'chart']);
 });
