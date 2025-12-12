@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "6f7333a8-c0c7-4e0e-9559-59d107db79c3",
+		"name": "Talenavi Todo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50448290",
+		"_collection_link": "https://dev-arfian-5612371.postman.co/workspace/Arfian-Dev's-Workspace~ba0287ad-b6e0-4757-858c-da26e13a2c6a/collection/50448290-6f7333a8-c0c7-4e0e-9559-59d107db79c3?action=share&source=collection_link&creator=50448290"
+	},
+	"item": [
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Endpoint Total Balance\",\n    \"assignee\": \"Dimas\", // optional\n    \"due_date\": \"2025-12-11\",\n    \"time_tracked\": \"10\", // optional, default 0\n    \"status\": \"open\", // optional, default pending \n    \"priority\": \"high\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/todo",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"todo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Export",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/todo/export?title=total&assignee=Dimas&start=2025-12-05&end=2025-12-09&min=4.12&max=10&status=pending,completed&priority=medium",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"todo",
+						"export"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "total"
+						},
+						{
+							"key": "assignee",
+							"value": "Dimas"
+						},
+						{
+							"key": "start",
+							"value": "2025-12-05"
+						},
+						{
+							"key": "end",
+							"value": "2025-12-09"
+						},
+						{
+							"key": "min",
+							"value": "4.12"
+						},
+						{
+							"key": "max",
+							"value": "10"
+						},
+						{
+							"key": "status",
+							"value": "pending,completed"
+						},
+						{
+							"key": "priority",
+							"value": "medium"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Chart",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/todo/chart?type=assignee",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"todo",
+						"chart"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "assignee"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
